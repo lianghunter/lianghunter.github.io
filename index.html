@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hunter Liang | Game and Graphics Programmer</title>
+  <meta name="description" content="Portfolio of Hunter Liang, a game and graphics programmer studying Computer Science at BYU.">
+  <meta property="og:title" content="Hunter Liang | Game and Graphics Programmer">
+  <meta property="og:description" content="Games, real-time graphics, and VR research. Computer Science at BYU.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.35' cy='.32' r='.75'%3E%3Cstop offset='0' stop-color='%23a9bdf7'/%3E%3Cstop offset='.45' stop-color='%232348d8'/%3E%3Cstop offset='1' stop-color='%23101e5c'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='14' fill='url(%23g)'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="render.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="#top">Hunter Liang</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero wrap" id="top">
+      <div class="hero-text">
+        <h1><span>Hunter</span> <span>Liang</span></h1>
+        <p class="lede">
+          Game and graphics programmer studying Computer Science at BYU. I was the lead
+          character movement programmer on Dragon Kisser, a BYU Animation game rated
+          Overwhelmingly Positive on Steam, and I build VR locomotion systems in
+          Unreal Engine for the BYU Graphics Lab.
+        </p>
+        <p class="hero-actions">
+          <a class="button" href="#projects">See my projects</a>
+          <a class="button button-quiet" href="assets/resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        </p>
+      </div>
+
+      <!-- This scene is ray traced live by render.js. To show one of your own renders
+           instead, replace the <canvas> with <img src="assets/hero.jpg" alt="..."> -->
+      <figure class="hero-render">
+        <canvas id="hero-render" role="img"
+          aria-label="A ray-traced scene of three spheres on a checkered floor, rendered live in the browser"></canvas>
+        <figcaption id="render-stats">Ray tracing this scene in your browser…</figcaption>
+      </figure>
+    </section>
+
+    <!-- ============ PROJECTS ============
+         Each project's media is a <video> or <img> inside <div class="frame">.
+         Drop a file at the path in its src and it shows up automatically.
+         Until then, the frame shows where the file should go. -->
+    <section class="section wrap" id="projects">
+      <h2>Projects</h2>
+
+      <!-- Featured project: the big one at the top -->
+      <article class="project project-featured">
+        <div class="frame">
+          <video src="assets/projects/dragonkisser.mp4" data-autoplay muted loop playsinline preload="metadata"
+                 aria-label="Gameplay clip from Dragon Kisser"></video>
+        </div>
+        <div class="project-body">
+          <h3>Dragon Kisser</h3>
+          <p class="project-meta">Lead character movement programmer, BYU Animation capstone, 2025–2026</p>
+          <p>
+            A free, single-boss soulslike where Domingo, a village rooster, tries to charm
+            the dragon attacking his town instead of fighting her. Built by about 40 BYU
+            Animation students and released on Steam in June 2026, where it's rated
+            Overwhelmingly Positive.
+          </p>
+          <p>
+            I built the core character movement and physics controls, the platforming
+            mechanics, gameplay minigames and the combo system, and did profiling and
+            memory optimization across the team's work.
+          </p>
+          <!-- TODO: replace with the engine and language you used, e.g. "Unreal Engine, C++, Perforce" -->
+          <p class="project-tools"><span class="todo">Engine, language, tools</span></p>
+          <p class="project-links">
+            <a href="https://store.steampowered.com/app/4681880/Dragon_Kisser/">Play it free on Steam</a>
+          </p>
+        </div>
+      </article>
+
+      <div class="project-grid">
+
+        <article class="project">
+          <div class="frame">
+            <video src="assets/projects/deck-commander.mp4" data-autoplay muted loop playsinline preload="metadata"
+                   aria-label="Clip of the team management screens I worked on in Deck Commander"></video>
+          </div>
+          <div class="project-body">
+            <h3>Deck Commander</h3>
+            <p class="project-meta">Software engineering intern, Destiny Edventures, 2025</p>
+            <p>
+              An indie sci-fi game in Unity. I joined its existing C# codebase and worked on
+              team management and UI improvements: modular UI systems for managing the team
+              roster, plus the data structures that drive roster navigation and keep the
+              screens in sync with game state.
+            </p>
+            <p class="project-tools">Unity, C#, Git</p>
+            <!-- <p class="project-links"><a href="https://LINK-TO-THE-GAME">Game page</a></p> -->
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="frame">
+            <video src="assets/projects/vr-locomotion.mp4" data-autoplay muted loop playsinline preload="metadata"
+                   aria-label="Clip of the VR leaning and crawling locomotion controls"></video>
+          </div>
+          <div class="project-body">
+            <h3>VR locomotion research</h3>
+            <p class="project-meta">Research assistant, BYU Graphics Lab, 2023–present</p>
+            <p>
+              I implement full-body ways of moving through VR, like leaning and crawling,
+              in Unreal Engine. I run supervised user tests on them and report how each
+              control design trades off immersion against usability.
+            </p>
+            <p class="project-tools">Unreal Engine, VR, user testing</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="frame">
+            <img src="assets/projects/raytracer.png" alt="A scene rendered by my C++ ray tracer" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>C++ ray tracer</h3>
+            <p class="project-meta"><span class="status">In progress</span> GPU port for a fall 2026 course</p>
+            <p>
+              A ray tracer I wrote from scratch in C++, with its own math types, ray-object
+              intersection code and rendering pipeline. This semester I'm parallelizing its
+              per-pixel work to run on an NVIDIA RTX 4070 Ti and measuring the speedup
+              against the original and across thread counts.
+            </p>
+            <p class="project-tools">C++, CUDA, NVIDIA NPP</p>
+            <!-- <p class="project-links"><a href="https://github.com/lianghunter/REPO-NAME">Source code</a></p> -->
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="frame">
+            <video src="assets/projects/minotaur-maze.mp4" data-autoplay muted loop playsinline preload="metadata"
+                   aria-label="Gameplay clip from Minotaur Maze"></video>
+          </div>
+          <div class="project-body">
+            <h3>Minotaur Maze</h3>
+            <p class="project-meta">3D game on a from-scratch engine</p>
+            <p>
+              A maze game running on a basic game engine written from scratch. It renders
+              3D models with OpenGL, and enemies chase the player in real time using
+              optimized A* pathfinding.
+            </p>
+            <p class="project-tools">C++, OpenGL</p>
+            <!-- <p class="project-links"><a href="https://github.com/lianghunter/REPO-NAME">Source code</a></p> -->
+          </div>
+        </article>
+
+        <!-- TEMPLATE: copy this whole <article> block to add another project.
+             For a still image instead of a clip, swap the <video> line for:
+             <img src="assets/projects/my-project.jpg" alt="Describe the image" loading="lazy">
+
+        <article class="project">
+          <div class="frame">
+            <video src="assets/projects/my-project.mp4" data-autoplay muted loop playsinline preload="metadata"
+                   aria-label="Describe the clip"></video>
+          </div>
+          <div class="project-body">
+            <h3>Project name</h3>
+            <p class="project-meta">Your role, context (class, jam, personal)</p>
+            <p>Two or three sentences: what it is, what you built, what you learned or achieved.</p>
+            <p class="project-tools">Tools, languages</p>
+            <p class="project-links"><a href="https://github.com/lianghunter/REPO-NAME">Source code</a></p>
+          </div>
+        </article>
+        -->
+
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section wrap" id="experience">
+      <h2>Experience</h2>
+
+      <ol class="entries">
+        <li class="entry">
+          <div class="entry-head">
+            <h3>Research Assistant</h3>
+            <p class="entry-org">BYU Graphics Lab</p>
+          </div>
+          <p class="entry-dates">Nov 2023 – Present</p>
+          <p class="entry-desc">
+            Implement VR locomotion controls (leaning, crawling) in Unreal Engine, run
+            supervised user tests, and report immersion and usability tradeoffs to the
+            research team.
+          </p>
+        </li>
+        <li class="entry">
+          <div class="entry-head">
+            <h3>Student Software Engineer</h3>
+            <p class="entry-org">BYU Animation (Dragon Kisser)</p>
+          </div>
+          <p class="entry-dates">July 2025 – May 2026</p>
+          <p class="entry-desc">
+            Lead character movement programmer on a large team of programmers and artists.
+            Built platforming mechanics, gameplay minigames and a combo system, and did
+            profiling and memory optimization.
+          </p>
+        </li>
+        <li class="entry">
+          <div class="entry-head">
+            <h3>Software Engineering Intern</h3>
+            <p class="entry-org">Destiny Edventures (Deck Commander)</p>
+          </div>
+          <p class="entry-dates">Jan 2025 – May 2025</p>
+          <p class="entry-desc">
+            Built game features in C# and Unity on an established indie sci-fi codebase,
+            including modular UI systems for team and roster management, with Git and code
+            reviews in an agile workflow.
+          </p>
+        </li>
+      </ol>
+
+      <div class="subgrid">
+        <div>
+          <h3 class="subhead">Education</h3>
+          <p><strong>Brigham Young University</strong>, Provo, UT<br>
+            BS in Computer Science<br>
+            <span class="muted">Expected August 2027</span></p>
+        </div>
+        <div>
+          <h3 class="subhead">Skills</h3>
+          <dl class="skills">
+            <dt>Languages</dt>
+            <dd>C++, C#, C, Java, Python</dd>
+            <dt>Engines and tools</dt>
+            <dd>Unreal Engine, Unity, Git, Perforce, OpenGL, Maya</dd>
+            <dt>Coursework</dt>
+            <dd>Data Structures, Advanced Algorithms, Computer Graphics, Operating Systems, Computer Architecture</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section wrap" id="contact">
+      <h2>Get in touch</h2>
+      <p class="contact-lede">I'm looking for a Summer 2027 software engineering internship. Email is the best way to reach me.</p>
+      <ul class="contact-links">
+        <li><a href="mailto:lianghunter@gmail.com">lianghunter@gmail.com</a></li>
+        <li><a href="https://github.com/lianghunter">GitHub</a></li>
+        <!-- <li><a href="https://www.linkedin.com/in/YOUR-PROFILE">LinkedIn</a></li> -->
+        <li><a href="assets/resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span data-year>2026</span> Hunter Liang. Hand-written HTML and CSS, hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+</body>
+</html>
