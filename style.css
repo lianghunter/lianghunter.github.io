@@ -10,7 +10,7 @@
   --line: #cdd4dc;        /* dividers */
   --accent: #2348d8;      /* cobalt: links, buttons */
   --accent-ink: #ffffff;  /* text on accent */
-  --amber: #e89a2c;       /* status dot, render buckets */
+  --amber: #e89a2c;       /* "In progress" status dot */
   --frame: #19212e;       /* dark frame behind clips */
   --todo-bg: #fff1c9;
   --todo-line: #d99413;
@@ -113,23 +113,25 @@ a:hover { text-decoration-thickness: 2px; }
 .site-header nav a:hover { color: var(--accent); }
 
 /* ---------- hero ---------- */
+/* Name on the left, intro on the right, bottoms lined up.
+   Stacks into one column on narrow screens (see the bottom of this file). */
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-  align-items: center;
-  gap: clamp(32px, 5vw, 64px);
-  padding-block: clamp(32px, 7vw, 88px) clamp(48px, 8vw, 104px);
+  grid-template-columns: auto minmax(0, 31rem);
+  justify-content: space-between;
+  align-items: end;
+  gap: 32px clamp(40px, 6vw, 88px);
+  padding-block: clamp(40px, 9vw, 120px) clamp(56px, 8vw, 104px);
 }
 .hero h1 {
-  font-size: clamp(3.4rem, 9.5vw, 7.25rem);
+  font-size: clamp(3.4rem, 10vw, 8.5rem);
   font-weight: 820;
   font-stretch: 125%;
-  line-height: 0.9;
+  line-height: 0.88;
   letter-spacing: -0.02em;
-  margin-bottom: 28px;
 }
 .hero h1 span { display: block; }
-.lede { font-size: 1.15rem; max-width: 34em; color: var(--ink); }
+.lede { font-size: 1.15rem; margin: 0; color: var(--ink); }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 0; }
 .button {
@@ -142,18 +144,6 @@ a:hover { text-decoration-thickness: 2px; }
 .button:hover { filter: brightness(1.08); }
 .button-quiet { background: transparent; color: var(--ink); border-color: var(--ink); }
 .button-quiet:hover { background: var(--ink); color: var(--bg); filter: none; }
-
-.hero-render { margin: 0; }
-.hero-render canvas {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  background: var(--frame);
-  border-radius: var(--radius);
-}
-.hero-render figcaption {
-  margin-top: 10px; font-size: 0.875rem; color: var(--muted);
-  font-variant-numeric: tabular-nums;
-}
 
 /* ---------- sections ---------- */
 .section {
@@ -272,8 +262,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ---------- small screens ---------- */
 @media (max-width: 860px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-render canvas { aspect-ratio: 16 / 10; }
+  .hero { grid-template-columns: minmax(0, 36rem); }
   .project-featured { grid-template-columns: 1fr; }
   .project-featured h3 { margin-top: 4px; }
 }
