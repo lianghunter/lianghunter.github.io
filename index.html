@@ -13,7 +13,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="render.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -37,8 +36,8 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero wrap" id="top">
-      <div class="hero-text">
-        <h1><span>Hunter</span> <span>Liang</span></h1>
+      <h1><span>Hunter</span> <span>Liang</span></h1>
+      <div class="hero-intro">
         <p class="lede">
           Game and graphics programmer studying Computer Science at BYU. I was the lead
           character movement programmer on Dragon Kisser, a BYU Animation game rated
@@ -50,14 +49,6 @@
           <a class="button button-quiet" href="assets/resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
         </p>
       </div>
-
-      <!-- This scene is ray traced live by render.js. To show one of your own renders
-           instead, replace the <canvas> with <img src="assets/hero.jpg" alt="..."> -->
-      <figure class="hero-render">
-        <canvas id="hero-render" role="img"
-          aria-label="A ray-traced scene of three spheres on a checkered floor, rendered live in the browser"></canvas>
-        <figcaption id="render-stats">Ray tracing this scene in your browser…</figcaption>
-      </figure>
     </section>
 
     <!-- ============ PROJECTS ============
@@ -87,8 +78,7 @@
             mechanics, gameplay minigames and the combo system, and did profiling and
             memory optimization across the team's work.
           </p>
-          <!-- TODO: replace with the engine and language you used, e.g. "Unreal Engine, C++, Perforce" -->
-          <p class="project-tools"><span class="todo">Engine, language, tools</span></p>
+          <p class="project-tools">Unreal Engine, C++, Blueprints, Perforce</p>
           <p class="project-links">
             <a href="https://store.steampowered.com/app/4681880/Dragon_Kisser/">Play it free on Steam</a>
           </p>
@@ -142,11 +132,11 @@
             <p class="project-meta"><span class="status">In progress</span> GPU port for a fall 2026 course</p>
             <p>
               A ray tracer I wrote from scratch in C++, with its own math types, ray-object
-              intersection code and rendering pipeline. This semester I'm parallelizing its
+              intersection code and rendering pipeline. This semester I'm working on parallelizing its
               per-pixel work to run on an NVIDIA RTX 4070 Ti and measuring the speedup
               against the original and across thread counts.
             </p>
-            <p class="project-tools">C++, CUDA, NVIDIA NPP</p>
+            <p class="project-tools">C++, CUDA</p>
             <!-- <p class="project-links"><a href="https://github.com/lianghunter/REPO-NAME">Source code</a></p> -->
           </div>
         </article>
@@ -160,8 +150,8 @@
             <h3>Minotaur Maze</h3>
             <p class="project-meta">3D game on a from-scratch engine</p>
             <p>
-              A maze game running on a basic game engine written from scratch. It renders
-              3D models with OpenGL, and enemies chase the player in real time using
+              A maze game running on a basic game engine written from scratch. Rendering has heavy usage from learnopengl.com. 
+              It renders 3D models with OpenGL, and enemies chase the player in real time using
               optimized A* pathfinding.
             </p>
             <p class="project-tools">C++, OpenGL</p>
@@ -239,7 +229,7 @@
           <h3 class="subhead">Education</h3>
           <p><strong>Brigham Young University</strong>, Provo, UT<br>
             BS in Computer Science<br>
-            <span class="muted">Expected August 2027</span></p>
+            <span class="muted">Expected Graduation in April 2027</span></p>
         </div>
         <div>
           <h3 class="subhead">Skills</h3>
